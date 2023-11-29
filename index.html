@@ -3,14 +3,15 @@
 <title>HTTP Status Codes</title>
 <head>
     <style>
-    
-          .center-content {
+      .center-content {
             text-align: center;
         } 
+
         table {
             font-family: Arial, sans-serif;
             border-collapse: collapse;
             width: 100%;
+            margin-bottom: 20px;
         }
 
         th, td {
@@ -21,6 +22,13 @@
 
         th {
             background-color: #f2f2f2;
+        }
+
+        /* Responsive styles */
+        @media only screen and (max-width: 600px) {
+            table {
+                font-size: 14px; /* Adjust font size for smaller screens */
+            }
         }
     </style>
 </head>
@@ -193,7 +201,7 @@ padding-top: 25px;
         <script>
             // JavaScript code to dynamically display the current year
             const currentYear = new Date().getFullYear();
-            document.write(`&copy; 2023- ${currentYear} HTTP Status Codes `);
+            document.write(`&copy; 2023 - ${currentYear} HTTP Status Codes `);
         </script>
     </footer>
     
