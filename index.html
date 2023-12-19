@@ -1,46 +1,110 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTTP Status Codes</title>
-    <style>
-        .center-content {
-            text-align: center;
-        } 
+    
+  <style>
+    body {
+        background-color: #fff;
+        color: #333;
+        margin: 0;
+        padding: 20px 10px;
+    }
 
+    .center-content {
+        text-align: center;
+        margin: 0 auto;
+        width: 50%;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    table {
+        font-family: Arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 10px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        color: #333;
+        font-weight: bold;
+    }
+
+    /* Responsive styles */
+    @media only screen and (max-width: 600px) {
         table {
-            font-family: Arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-            margin-bottom: 20px;
+            font-size: 14px;
+            max-width: 100%;
         }
 
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
+        .center-content {
+        text-align: center;
+        margin: 0 auto;
+        width: 95%;
+        background-color: #fff;
+        padding: 10px 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    }
 
-        th {
-            background-color: #f2f2f2;
-        }
+    /* Dark mode styles */
+    body.dark-mode {
+        background-color: #333;
+        color: #fff;
+    }
 
-        /* Responsive styles */
-        @media only screen and (max-width: 600px) {
-            table {
-                font-size: 14px; /* Adjust font size for smaller screens */
-            }
-        }
-    </style>
+    .toggle-dark-mode {
+        background-color: #383838;
+        color: #fff;
+        border: none;
+        font-size: 1rem;
+        border-radius: 5px;
+        padding: 8px 12px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .toggle-dark-mode:hover {
+        background-color: #4a4a4a;
+    }
+
+    .dark-mode .center-content {
+        background-color: #444;
+        color: #fff;
+    }
+
+    .dark-mode .toggle-dark-mode {
+        background-color: #fff;
+        color: #383838;
+    }
+</style>
+
+
 </head>
 <body>
-   <div class="center-content">
 
-    <h2>HTTP Status Codes</h2>
+  <div class="center-content">
 
-    <h3>Informational responses (100 – 199)</h3>
+        <h2>HTTP Status Codes &nbsp;&nbsp; <button class="toggle-dark-mode" onclick="toggleDarkMode()">
+            <i class="fas fa-adjust"></i> 
+        </button>
+        </h2>
+
+        <!-- ... Your tables go here ... -->
+            <h3>Informational responses (100 – 199)</h3>
     <table>
         <tr>
             <th>Status Code</th>
@@ -194,23 +258,37 @@
     
     </div>
     
-    
-<div  style="
-padding-top: 25px;
-      ;" > </div>
-   
-   <center>
-   <footer>
-        <script>
-            // JavaScript code to dynamically display the current year
-            const currentYear = new Date().getFullYear();
-            document.write(`&copy; 2023- ${currentYear} HTTP Status Codes `);
-        </script>
-    </footer>
-    
-    
+  </div>
+  
+
+    <div style="padding-top: 25px;"></div>
+
+    <center>
+        <footer>
+            <script>
+                const currentYear = new Date().getFullYear();
+                document.write(`&copy; 2023-${currentYear} HTTP Status Codes`);
+            </script>
+        </footer>
     </center>
-</body>
+
+    </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            const centerContent = document.querySelector('.center-content');
+            const darkModeButton = document.querySelector('.toggle-dark-mode');
+
+            body.classList.toggle('dark-mode');
+            centerContent.classList.toggle('dark-mode');
+
+            // Update button icon based on dark mode state
+            const iconClass = body.classList.contains('dark-mode') ? 'fa-sun' : 'fa-moon';
+            darkModeButton.innerHTML = `<i class="fas ${iconClass}"></i>`;
+        }
+    </script>
+
 </html>
-
-
